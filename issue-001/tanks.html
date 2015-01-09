@@ -15,19 +15,19 @@
 
     var PhaserGame = function (game) {
 
-        this.tank;
-        this.turret;
-        this.flame;
-        this.bullet;
+        this.tank = null;
+        this.turret = null;
+        this.flame = null;
+        this.bullet = null;
 
-        this.background;
-        this.targets;
+        this.background = null;
+        this.targets = null;
 
-        this.power;
-        this.powerText;
+        this.power = 300;
+        this.powerText = null;
 
-        this.cursors;
-        this.fireButton;
+        this.cursors = null;
+        this.fireButton = null;
 
     };
 
@@ -46,12 +46,17 @@
 
         preload: function () {
 
-            this.load.image('tank', 'assets/tanx/tank.png');
-            this.load.image('turret', 'assets/tanx/turret.png');
-            this.load.image('bullet', 'assets/tanx/bullet.png');
-            this.load.image('background', 'assets/tanx/background.png');
-            this.load.image('flame', 'assets/tanx/flame.png');
-            this.load.image('target', 'assets/tanx/target.png');
+            //  We need this because the assets are on Amazon S3
+            //  Remove the next 2 lines if running locally
+            this.load.baseURL = 'http://files.phaser.io.s3.amazonaws.com/codingtips/issue001/';
+            this.load.crossOrigin = 'anonymous';
+
+            this.load.image('tank', 'assets/tank.png');
+            this.load.image('turret', 'assets/turret.png');
+            this.load.image('bullet', 'assets/bullet.png');
+            this.load.image('background', 'assets/background.png');
+            this.load.image('flame', 'assets/flame.png');
+            this.load.image('target', 'assets/target.png');
 
             //  Note: Graphics from Amiga Tanx Copyright 1991 Gary Roberts
 
@@ -222,7 +227,7 @@
 
     </script>
 
-    <a href="http://phaser.io"><img src="assets/tanx/phaser-tips-header1.png" title="Phaser Coding Tips Weekly" style="margin-top: 8px" /></a>
+    <a href="http://phaser.io"><img src="phaser-tips-header1.png" title="Phaser Coding Tips Weekly" style="margin-top: 8px" /></a>
 
 </body>
 </html>
