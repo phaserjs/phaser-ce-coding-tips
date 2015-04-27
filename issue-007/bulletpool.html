@@ -483,11 +483,9 @@
 
     Weapon.Combo1.prototype.reset = function () {
 
-        this.weapon1.visible = false;
         this.weapon1.callAll('reset', null, 0, 0);
         this.weapon1.setAll('exists', false);
 
-        this.weapon2.visible = false;
         this.weapon2.callAll('reset', null, 0, 0);
         this.weapon2.setAll('exists', false);
 
@@ -515,15 +513,12 @@
 
     Weapon.Combo2.prototype.reset = function () {
 
-        this.weapon1.visible = false;
         this.weapon1.callAll('reset', null, 0, 0);
         this.weapon1.setAll('exists', false);
 
-        this.weapon2.visible = false;
         this.weapon2.callAll('reset', null, 0, 0);
         this.weapon2.setAll('exists', false);
 
-        this.weapon3.visible = false;
         this.weapon3.callAll('reset', null, 0, 0);
         this.weapon3.setAll('exists', false);
 
